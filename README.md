@@ -13,15 +13,16 @@ This project is built to automatically recommend clones for refactoring, which l
 
 ## III. How to run
 
-Originally, *CREC* was developed as an [Eclipse](http://www.eclipse.org/mars/) Java Project, you can simply **import** the project into your workspace and the class `cofix.main.Main` is the entry of the whole program.
+Originally, *CREC* was developed as an [Eclipse](http://www.eclipse.org/mars/) Java Project, you can simply **import** the project into your workspace.
 
 ## IV.  Structure of the project
 ```powershell
-  |--- README.md         :  user guidance
-  |--- codes             :  source code
-  |--- features          :  features extracted by CREC
-  |--- refactorInstances :  refactor instances collected by CREC
-  |--- results           :  machine learning results in paper
+  |--- README.md           :  user guidance
+  |--- codes               :  source code
+  |--- features            :  features extracted by CREC
+  |--- refactorInstances   :  refactor instances collected by CREC
+  |--- unrefactorInstances :  not refactor instances collected by CREC
+  |--- results             :  machine learning results in paper
 
 ```
 

@@ -1,0 +1,29 @@
+    public static ChildrenAggregationBuilder parse(String aggregationName, QueryParseContext context) throws IOException {
+        String childType = null;
+
+        XContentParser.Token token;
+        String currentFieldName = null;
+        XContentParser parser = context.parser();
+        while ((token = parser.nextToken()) != XContentParser.Token.END_OBJECT) {
+            if (token == XContentParser.Token.FIELD_NAME) {
+                currentFieldName = parser.currentName();
+            } else if (token == XContentParser.Token.VALUE_STRING) {
+                if ("type".equals(currentFieldName)) {
+                    childType = parser.text();
+                } else {
+                    throw new ParsingException(parser.getTokenLocation(),
+                            "Unknown key for a " + token + " in [" + aggregationName + "]: [" + currentFieldName + "].");
+                }
+            } else {
+                throw new ParsingException(parser.getTokenLocation(), "Unexpected token " + token + " in [" + aggregationName + "].");
+            }
+        }
+
+        if (childType == null) {
+            throw new ParsingException(parser.getTokenLocation(),
+                    "Missing [child_type] field for children aggregation [" + aggregationName + "]");
+        }
+
+
+        return new ChildrenAggregationBuilder(aggregationName, childType);
+    }

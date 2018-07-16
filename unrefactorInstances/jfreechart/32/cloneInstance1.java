@@ -1,0 +1,28 @@
+        else {
+            double minimum = Double.POSITIVE_INFINITY;
+            int seriesCount = dataset.getRowCount();
+            int itemCount = dataset.getColumnCount();
+            for (int series = 0; series < seriesCount; series++) {
+                for (int item = 0; item < itemCount; item++) {
+                    Number value;
+                    if (dataset instanceof IntervalCategoryDataset) {
+                        IntervalCategoryDataset icd
+                                = (IntervalCategoryDataset) dataset;
+                        value = icd.getStartValue(series, item);
+                    }
+                    else {
+                        value = dataset.getValue(series, item);
+                    }
+                    if (value != null) {
+                        minimum = Math.min(minimum, value.doubleValue());
+                    }
+                }
+            }
+            if (minimum == Double.POSITIVE_INFINITY) {
+                return null;
+            }
+            else {
+                return new Double(minimum);
+            }
+
+        }
