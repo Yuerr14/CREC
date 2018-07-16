@@ -1,0 +1,7 @@
+CrossProjects
+Features:		P(%)	R(%)	F(%)
+noCodeFeature		74.8	77.2	74.1
+noHistoryFeature	65.3	63.9	63.1
+noLocationFeature	74.0	73.2	72.7
+noDiffFeature		77.6	77.3	76.4
+noCoChangeFeature	73.2	66.9	69.1

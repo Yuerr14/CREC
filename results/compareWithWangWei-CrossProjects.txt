@@ -1,0 +1,37 @@
+CrossProjects
+CREC:			P(%)	R(%)	F(%)
+Axis2			82.1	84.2	83.1
+Eclipse.jdt.core	71.4	90.4	79.8
+Elastic Search		70.0	43.8	53.8
+JFreeChart		72.9	86.4	79.1
+JRuby			72.0	63.2	67.3
+Lucene			92.6	92.6	92.6
+Average			76.8	76.8	75.9
+
+CRECm:			P(%)	R(%)	F(%)
+Axis2			61.5	42.1	50.0
+Eclipse.jdt.core	56.5	78.7	65.8
+Elastic Search		55.2	50.0	52.5
+JFreeChart		38.5	25.4	30.6
+JRuby			60.4	56.1	58.2
+Lucene			56.7	63.0	59.6
+Average			54.8	52.6	52.8
+
+CRECf:			P(%)	R(%)	F(%)
+Axis2			80.0	52.6	63.5
+Eclipse.jdt.core	63.3	86.2	73.0
+Elastic Search		66.7	31.3	42.6
+JFreeChart		46.2	20.3	28.2
+JRuby			74.6	82.5	78.3
+Lucene			100.0	48.1	65.0
+Average			71.8	53.5	58.4
+
+Wang's Approach:	P(%)	R(%)	F(%)
+Axis2			54.5	31.6	40.0
+Eclipse.jdt.core	67.2	83.0	74.3
+Elastic Search		48.0	37.5	42.1
+JFreeChart		33.3	25.4	28.8
+JRuby			65.7	77.2	71.0
+Lucene			48.0	44.4	46.2
+Average			52.8	49.8	50.4
+

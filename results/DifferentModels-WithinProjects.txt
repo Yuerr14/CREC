@@ -1,0 +1,7 @@
+WithinProjects
+Models:			P(%)	R(%)	F(%)
+AdaBoost		82.1	86.4	83.3
+RandomForest		81.1	88.8	84.1
+C4.5			82.0	88.0	84.0
+SMO			79.4	79.8	77.9
+NaiveBayes		73.0	61.2	63.9

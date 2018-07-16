@@ -1,0 +1,19 @@
+        else if (obj == clientSide){
+            if(serverSide.isSelected()){
+                rdasync.setEnabled(false);
+                rdBoth.setEnabled(false);
+                rdsyn.setEnabled(false);
+                serviceXML.setEnabled(true);
+                chkTestCase.setEnabled(false);
+                serverSideInterface.setEnabled(true);
+            }
+            else
+            {
+                rdasync.setEnabled(true);
+                rdBoth.setEnabled(true);
+                rdsyn.setEnabled(true);
+                chkTestCase.setEnabled(true);
+                serviceXML.setEnabled(false);
+                serverSideInterface.setEnabled(false);
+            }
+        }

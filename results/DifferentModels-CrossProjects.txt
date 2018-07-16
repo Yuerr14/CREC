@@ -1,0 +1,7 @@
+CrossProjects
+Models:			P(%)	R(%)	F(%)
+AdaBoost		76.8	76.8	75.9
+RandomForest		72.2	54.8	60.7
+C4.5			71.8	53.5	58.4
+SMO			57.3	53.7	54.0
+NaiveBayes		59.6	49.6	52.7

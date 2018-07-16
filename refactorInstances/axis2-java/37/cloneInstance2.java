@@ -1,0 +1,47 @@
+        if (typeTable.isSimpleType(propertyName)) {
+
+            if (isGenerateWrappedArrayTypes && isArrayType) {
+
+                XmlSchemaElement xmlSchemaElement = new XmlSchemaElement();
+                xmlSchemaElement.setName( name + "Wrapper");
+                xmlSchemaElement.setNillable(true);
+                sequence.getItems().add(xmlSchemaElement);
+
+                String complexTypeName =
+                        typeTable.getSimpleSchemaTypeName(propertyName).getLocalPart() + "Wrapper";
+
+                XmlSchemaComplexType xmlSchemaComplexType = null;
+                if (xmlSchema.getTypeByName(complexTypeName) == null) {
+                    xmlSchemaComplexType = new XmlSchemaComplexType(xmlSchema);
+                    XmlSchemaSequence xmlSchemaSequence = new XmlSchemaSequence();
+                    xmlSchemaComplexType.setParticle(xmlSchemaSequence);
+                    xmlSchemaComplexType.setName(complexTypeName);
+
+                    xmlSchema.getItems().add(xmlSchemaComplexType);
+                    xmlSchema.getSchemaTypes().add(
+                            new QName(schemaTargetNameSpace, xmlSchemaComplexType.getName()),
+                            xmlSchemaComplexType);
+                    addElementToSequence("array",
+                        typeTable.getSimpleSchemaTypeName(propertyName),
+                        xmlSchemaSequence,
+                        propertyName.equals("base64Binary"),
+                        isArrayType,
+                        type.isPrimitive());
+                } else {
+                   xmlSchemaComplexType = (XmlSchemaComplexType) xmlSchema.getTypeByName(complexTypeName);
+                }
+
+                xmlSchemaElement.setSchemaType(xmlSchemaComplexType);
+                xmlSchemaElement.setSchemaTypeName(new QName(schemaTargetNameSpace, xmlSchemaComplexType.getName()));
+
+
+            } else {
+                addElementToSequence(name,
+                        typeTable.getSimpleSchemaTypeName(propertyName),
+                        sequence,
+                        propertyName.equals("base64Binary"),
+                        isArrayType,
+                        type.isPrimitive());
+            }
+
+        } else {
