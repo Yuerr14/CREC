@@ -62,7 +62,7 @@ $commitsPath/$projectName/getCloneVersions.sh 1>/dev/null
 date
 
 echo '|--------------------------------------------------------------------|'
-echo '|         start detect clones                                        |'
+echo '|         detect clones                                              |'
 echo '|--------------------------------------------------------------------|'
 projectPath=${basePath}/${projectName}Filter
 tokenPath=${basePath}/SourcererCC/parser/java
@@ -88,13 +88,13 @@ done
 date
 
 echo '|--------------------------------------------------------------------|'
-echo '|         start collect refactor clones                              |'
+echo '|         collect refactor clones                                    |'
 echo '|--------------------------------------------------------------------|'
 java -jar CollectRefactorClones.jar $basePath/ $projectName
 date
 
 echo '|--------------------------------------------------------------------|'
-echo '|         start extract features                             |'
+echo '|         extract features                                           |'
 echo '|--------------------------------------------------------------------|'
 java -jar ExtractFeatures.jar $basePath/ $projectName
 date
