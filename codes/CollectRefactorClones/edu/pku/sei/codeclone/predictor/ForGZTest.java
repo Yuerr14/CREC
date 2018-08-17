@@ -130,12 +130,12 @@ public class ForGZTest {
         else {
         	basePath = args[0];
         	projectName = args[1];
-        	repoPath = basePath + "tmp/" + projectName + "Filter/";
-        	outputBasePath = basePath + "tmp/results/" + projectName + "/";
+        	repoPath = basePath + projectName + "Filter/";
+        	outputBasePath = basePath + "results/" + projectName + "/";
         	File file = new File(outputBasePath);
         	if (!file.exists())
         		file.mkdirs();
-        	versionFolderPath = basePath + "tmp/versions/";
+        	versionFolderPath = basePath + "versions/";
         	file = new File(versionFolderPath);
         	if (!file.exists())
         		file.mkdirs();

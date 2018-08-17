@@ -34,7 +34,7 @@ public class ManuExpInvoker {
 			basePath = args[0];
 			String projectName = args[1];
 			logBasePath = basePath + "commits/";
-			refactorInsBasePath = basePath + "NewFolder-after6.26/refactorInstancesInPaper/";
+			refactorInsBasePath = basePath + "results/";
 			
 			String filterLogFilePath = null, repoFolderPath = null, cloneDataPath = null;
 			String projectPath = null, totalLogFilePath = null;
@@ -52,26 +52,21 @@ public class ManuExpInvoker {
 			projectPath = basePath + projectName;
 			totalLogFilePath = logBasePath + projectName + "/authorCommit.txt";
 
-			
-			//GetMonth getMonth = new GetMonth();
-			//getMonth.extractFeatures(filterLogFilePath, totalLogFilePath, repoFolderPath, cloneDataPath, projectPath);
-			//arffFilePath = getMonth.getArffFilePath(cloneDataPath, true);
-			
-			//extractor.extractFeatures(filterLogFilePath, repoFolderPath, cloneDataPath, projectPath, filterLogFilePath,totalLogFilePath);
-			//arffFilePath=extractor.getArffFilePath(cloneDataPath,true,false);			
-			arffFilePath = "/home/sonia/NewExperiment/NewFolder-after6.26/refactorInstancesInPaper/0713/jruby/groupFeaturesNewloc.arff";
+			extractor.extractFeatures(filterLogFilePath, repoFolderPath, cloneDataPath, projectPath, filterLogFilePath,totalLogFilePath);
+			arffFilePath=extractor.getArffFilePath(cloneDataPath,true,false);			
+
 			added = new AddedFeature(repoFolderPath, cloneDataPath, arffFilePath, projectPath, filterLogFilePath,totalLogFilePath);
-			//added.computeAddedFeature();
+			added.computeAddedFeature();
 			added.combineFeature();
 			arffFilePath=added.getArffFilePath();
 							
 			hisFeatureGen=new HistoryFeatureGenerator(cloneDataPath,arffFilePath,projectPath,filterLogFilePath,totalLogFilePath,repoFolderPath); 
-			//hisFeatureGen.computeHistoryFeature();
+			hisFeatureGen.computeHistoryFeature();
 			hisFeatureGen.combineHistoryFeature();
 			arffFilePath=hisFeatureGen.getNormalizedNewArffFilePath();
 			
 			diffGen=new CloneDiffFeatureGenerator(cloneDataPath,arffFilePath, projectPath, filterLogFilePath,totalLogFilePath, repoFolderPath);
-			//diffGen.computeCloneDiffFeature();
+			diffGen.computeCloneDiffFeature();
 			diffGen.combineCloneDiff();
 			System.out.println(diffGen.getNorArffFilePath());
 			

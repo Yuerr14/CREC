@@ -1,3 +1,0 @@
-PackageName:org.jruby.ext.io.wait
-QualifiedClassName:org.jruby.ext.io.wait.IOWaitLibrary
-ClassName:IOWaitLibrary

@@ -15,10 +15,13 @@ This project is built to automatically recommend clones for refactoring, which l
 
 Originally, *CREC* was developed as an [Eclipse](http://www.eclipse.org/mars/) Java Project, you can simply **import** the project into your workspace.
 
+In the runnable folder, detectClones.sh is an example shell. You can run detectClones.sh for jfreechart project, or you can change the projectName and project repository for your own need.
+
 ## IV.  Structure of the project
 ```powershell
   |--- README.md           :  user guidance
   |--- codes               :  source code
+  |--- runnable            :  shell for preparation
   |--- features            :  features extracted by CREC
   |--- refactorInstances   :  refactor instances collected by CREC
   |--- unrefactorInstances :  not refactor instances collected by CREC

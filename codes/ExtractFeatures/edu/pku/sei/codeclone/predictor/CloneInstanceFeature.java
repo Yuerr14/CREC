@@ -179,7 +179,7 @@ public class CloneInstanceFeature implements Serializable {
 				this.statPorForArithVsFrag = (double) cf.numArithStmt / cf.numTotalStmt;
 
 			// Feature 6
-			this.numMonthOfFile = this.his.getFileMonLength();
+			this.numMonthOfFile = 0;//this.his.getFileMonLength();
 			// Feature 12
 			this.cycComplexity = cf.cycComplexity;
 			// Feature 10(CCFinder contains clone token ranges, but sourcererCC
@@ -255,9 +255,9 @@ public class CloneInstanceFeature implements Serializable {
 		//featureString += this.cloneGroupFeature.localOrClassFamilyFile + ",";
 		
 		//for wangwei
-		featureString += this.cloneGroupFeature.localOrSiblings + ",";
+		//featureString += this.cloneGroupFeature.localOrSiblings + ",";
 		//for our
-		//featureString += this.cloneGroupFeature.isClassFamily + ",";
+		featureString += this.cloneGroupFeature.isClassFamily + ",";
 		
 		// For Context of Clone
 		featureString += this.followControlStat + ",";
